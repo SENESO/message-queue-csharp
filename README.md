@@ -1,5 +1,7 @@
 # message-queue-csharp
 
+[![CI](https://github.com/SENESO/message-queue-csharp/actions/workflows/ci.yml/badge.svg)](https://github.com/SENESO/message-queue-csharp/actions/workflows/ci.yml)
+
 A log-based message queue built from scratch in C# on .NET 8 - a small,
 honest "build your own Kafka": brokers keep topics split into **partitions**,
 each partition is an append-only **segmented log** on disk, producers write
