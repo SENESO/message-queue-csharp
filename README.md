@@ -50,6 +50,10 @@ foreach (Message message in batch)
 await consumer.CommitAsync(batch[^1]);             // a restarted consumer resumes after this point
 ```
 
+A real run of exactly that:
+
+![Broker and demo: produce 3 messages over TCP, consume them in a group, commit offsets](docs/mq-demo.png)
+
 ## How it works
 
 **Segmented log storage.** Each partition is a directory of segment files
@@ -94,6 +98,8 @@ to whole segments from the oldest end. The active segment is never deleted.
 ```bash
 dotnet test
 ```
+
+![dotnet test: 17 passed, 0 failed](docs/mq-tests.png)
 
 17 tests cover the record codec (CRC corruption), segment rolling, sparse
 index reads across segment boundaries, torn-tail recovery, retention, topic
